@@ -98,10 +98,10 @@ class ViewController: UIViewController {
     
     func startAccelerometer() {
         //加速度を取得する
-        let handler: CMAccelerometerHandler = {(CMAccelerometerData:CMAccelerometerData?, error:Error?) -> self Void in
+        let handler: CMAccelerometerHandler = {(CMAccelerometerData:CMAccelerometerData?, error:Error?) -> Void in
             self.speedX += CMAccelerometerData!.acceleration.x
             self.speedY += CMAccelerometerData!.acceleration.y
-            
+        
             //プレイヤーの中心
             var posX = self.playerView.center.x + (CGFloat(self.speedX) / 3)
             var posY = self.playerView.center.y - (CGFloat(self.speedY) / 3)
